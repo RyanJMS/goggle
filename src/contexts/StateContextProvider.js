@@ -26,10 +26,8 @@ export const StateContextProvider = ({ children }) => {
       setResults(data.entries);
     } else if (url.includes("/images")) {
       setResults(data.image_results);
-    } else if (url.includes("/videos")) {
-      return setResults(data.results);
-    } else if (url.includes("/search")) {
-      return setResults(data.results);
+    } else {
+      return setResults(data);
     }
 
     setLoading(false);
