@@ -1,9 +1,17 @@
 import React from "react";
-
+import { Switch, Route, Redirect } from "react-router-dom";
+import Results from "./Results";
 const Routes = () => {
   return (
     <div>
-      <h1>Routes</h1>
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/search" />
+        </Route>
+        <Route exact path={["/search", "/images", "/news", "/videos"]}>
+          <Results />
+        </Route>
+      </Switch>
     </div>
   );
 };
